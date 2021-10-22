@@ -15,4 +15,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Each example contains a `README.md` with an explanation about the service and it's use cases.
 | Example |
 |:---------------------------|
-|  |
+| [Simple plaintext response](https://github.com/SeniorSA/bot-custom-service-examples/blob/main/simple-plaintext-response/src/simple-plaintext-response-js) <br/> Custom service that returns a plain text. | 
