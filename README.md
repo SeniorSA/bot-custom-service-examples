@@ -18,3 +18,4 @@ Each example contains a `README.md` with an explanation about the service and it
 | Example |
 |:---------------------------|
 | [Simple plaintext response](https://github.com/SeniorSA/bot-custom-service-examples/blob/main/simple-plaintext-response/src/simple-plaintext-response-js) <br/> Custom service that returns a plain text. | 
+| [Simple HTTP request](https://github.com/SeniorSA/bot-custom-service-examples/blob/main/simple-http-request/src/simple-http-request.js) <br/> Custom service that performs a simple HTTP call looking for the injured of the year 2022. | 
