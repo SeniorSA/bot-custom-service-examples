@@ -12,8 +12,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## :world_map: Roadmap
 
-- [ ] Bot integration with BPM (X Platform)
-- [ ] Bot integration with Social (X Platform)
+- [ ] [Bot integration with BPM (X Platform)](https://github.com/SeniorSA/bot-custom-service-examples/issues/1)
+- [ ] [Bot integration with Social (X Platform)](https://github.com/SeniorSA/bot-custom-service-examples/issues/2)
 
 ## :link: Useful links
 
