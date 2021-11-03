@@ -4,7 +4,7 @@ const https = require('https');
 const HOST_PLATFORM = 'platform-homologx.senior.com.br';
 const PATH_GET_PROCESSES_LIST = '/t/senior.com.br/bridge/1.0/rest/platform/workflow/queries/getProcessesList?serviceAction=UserGrantedProcesses';
 const PATH_START_REQUEST = '/t/senior.com.br/bridge/1.0/rest/platform/workflow/actions/startRequest';
-
+// Code
 const doRequest = (host, path, method, authorization, body) => {
   return new Promise((resolve, reject) => {
     const options = {
@@ -42,45 +42,44 @@ const getProcessList = (authorization) => {
   return doRequest(HOST_PLATFORM, PATH_GET_PROCESSES_LIST, 'GET', authorization, body)
 };
 
-
 const startRequest = (authorization, processId, businessData) => {
   const body = {
-      processId: processId,
-      businessData: businessData
+    processId: processId,
+    businessData: businessData
   };
   return doRequest(HOST_PLATFORM, PATH_START_REQUEST, 'POST', authorization, body)
 };
 
 const findProcess = (processName, processes) => {
-      for (const index in processes) {
-          const item = processes[index];
-          if (item.processName.toLowerCase() == processName.toLowerCase()) {
-              return item;
-          }
-      }
+  for (const index in processes) {
+    const item = processes[index];
+    if (item.processName.toLowerCase() == processName.toLowerCase()) {
+      return item;
+    }
+  }
 }
 
 module.exports = async (authorization, parameters) => {
-    try
-    {
-        const processList = await getProcessList(authorization);
-        let process = findProcess(parameters.processName, processList.processes);
-        if (!process) {
-            return {
-                type: 'PLAINTEXT',
-                text: [`Processo ${parameters.processName} não encontrado.`]
-            }
-        }
-        const output = await startRequest(authorization, process.processId, {});
-        return {
-            type: 'PLAINTEXT',
-            text: [`Requisição criada com o id ${output.processInstanceID}`]
-        }
+  try
+  {
+    const processList = await getProcessList(authorization);
+    let process = findProcess(parameters.processName, processList.processes);
+    if (!process) {
+      return {
+        type: 'PLAINTEXT',
+        text: [`Processo ${parameters.processName} não encontrado.`]
+      }
     }
-    catch(e){
-        return {
-            type: 'PLAINTEXT',
-            text: [`Error: ${e.name} => ${e.message}`]
-        }
+    const output = await startRequest(authorization, process.processId, {});
+    return {
+      type: 'PLAINTEXT',
+      text: [`Requisição criada com o id ${output.processInstanceID}`]
     }
+  }
+  catch(e){
+    return {
+      type: 'PLAINTEXT',
+      text: [`Error: ${e.name} => ${e.message}`]
+    }
+  }
 }
