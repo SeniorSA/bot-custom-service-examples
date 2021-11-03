@@ -2,6 +2,6 @@
 
 ## Description
 
-Custom service that performs a simple new request in BPM.
+Custom service that start a simple new request in BPM.
 
 ## Use cases
