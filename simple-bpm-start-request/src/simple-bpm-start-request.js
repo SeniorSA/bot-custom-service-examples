@@ -2,7 +2,7 @@
 const https = require('https');
 // Platform URL
 const HOST_PLATFORM = 'platform-homologx.senior.com.br';
-const PATH_GET_PROCESSES_LIST = '/t/senior.com.br/bridge/1.0/rest/platform/workflow/queries/getProcessesList?serviceAction=UserGrantedProcesses';
+const PATH_GET_PROCESSES_LIST = '/t/senior.com.br/bridge/1.0/rest/platform/workflow/queries/getPublishedProcess';
 const PATH_START_REQUEST = '/t/senior.com.br/bridge/1.0/rest/platform/workflow/actions/startRequest';
 // Code
 const doRequest = (host, path, method, authorization, body) => {
